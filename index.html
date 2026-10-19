@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#151b39" />
+  <meta name="description" content="Tu biblioteca privada de diapositivas y plantillas para producir libros universitarios." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="AulaPress" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icons/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>AulaPress AI · Biblioteca académica</title>
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <aside class="sidebar" aria-label="Menú principal">
+      <a class="brand" href="#inicio" data-nav="inicio"><span class="logo-mark">A<span class="logo-star">✦</span></span><span class="brand-name">AulaPress <i>AI</i><small>EDITORIAL UNIVERSITARIA</small></span></a>
+      <div class="nav-label">ESPACIO PERSONAL</div>
+      <nav class="nav-stack">
+        <button type="button" class="nav-btn active" data-nav="inicio"><span class="nav-ico" data-icon="home"></span>Inicio</button>
+        <button type="button" class="nav-btn" data-nav="cursos"><span class="nav-ico" data-icon="folders"></span>Mis cursos</button>
+        <button type="button" class="nav-btn" data-nav="biblioteca"><span class="nav-ico" data-icon="book"></span>Biblioteca</button>
+        <button type="button" class="nav-btn" data-nav="plantilla"><span class="nav-ico" data-icon="palette"></span>Plantilla editorial</button>
+      </nav>
+      <div class="sidebar-bottom"><button type="button" class="nav-btn" data-nav="ajustes"><span class="nav-ico" data-icon="settings"></span>Ajustes</button><div class="local-pill"><span></span> Modo privado · Este dispositivo</div></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><div id="breadcrumb" class="breadcrumb">Mi espacio / Inicio</div><div class="top-sub">Organiza tus clases. Prepara tus próximos libros.</div></div><button type="button" class="avatar" id="open-settings" aria-label="Abrir ajustes">AP</button></header>
+      <div id="view" aria-live="polite"></div>
+    </main>
+    <nav class="bottom-nav" aria-label="Menú móvil">
+      <button type="button" class="bottom-link active" data-nav="inicio"><span data-icon="home"></span><small>Inicio</small></button>
+      <button type="button" class="bottom-link" data-nav="cursos"><span data-icon="folders"></span><small>Cursos</small></button>
+      <button type="button" class="bottom-link" data-nav="biblioteca"><span data-icon="book"></span><small>Libros</small></button>
+      <button type="button" class="bottom-link" data-nav="plantilla"><span data-icon="palette"></span><small>Plantilla</small></button>
+      <button type="button" class="bottom-link" data-nav="ajustes"><span data-icon="settings"></span><small>Ajustes</small></button>
+    </nav>
+  </div>
+  <div id="dialog-root"></div>
+  <div id="toast-root" aria-live="polite" aria-atomic="true"></div>
+  <input hidden id="slides-input" type="file" multiple accept=".pdf,.pptx,application/pdf,application/vnd.openxmlformats-officedocument.presentationml.presentation" />
+  <input hidden id="template-input" type="file" accept=".pdf,application/pdf" />
+  <input hidden id="backup-input" type="file" accept=".json,application/json" />
+  <script defer src="./db.js"></script>
+  <script defer src="./app.js"></script>
+</body>
+</html>
